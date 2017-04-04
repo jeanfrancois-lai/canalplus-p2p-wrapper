@@ -1,0 +1,37 @@
+<html>
+    <head>
+    <title>Streamroot P2P wrapper for Canal+ player demo</title>
+
+    <script type="text/javascript" src="one-player-core.js"></script>
+    <script type="text/javascript" src="../dist/canalplus-p2p-wrapper.js"></script>
+    </head>
+
+    <body>
+        <div id="videoContainer">
+            <video id="videoPlayer" width="480" height="360" controls muted></video>
+        </div>
+
+        <script>
+            var videoElement = document.getElementById("videoPlayer");
+            videoElement.addEventListener('error', function(event) {
+                console.log(event);
+                console.log(videoElement.error);
+            });
+
+            var playerOptions = {
+                videoElement: videoElement,
+            };
+            var player = new RxPlayer(playerOptions);
+
+            var wrapper = new CanalPlusWrapper(player);
+
+            var loadVideoOptions = {
+                url: "http://hss-m05.live-aka.canal-plus.com/live/hss/cnews-clair-hd/hd-clair.isml/manifest",
+                transport: "smooth",
+                autoPlay: false,
+            };
+            loadVideoOptions = wrapper.patchTransport(loadVideoOptions);
+            player.loadVideo(loadVideoOptions);
+        </script>
+    </body>
+</html>
