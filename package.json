@@ -15,7 +15,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint lib/ test/",
     "build": "webpack --progress --config webpack/webpack.wrapper.dev.babel.js",
-    "watch": "webpack --progress --config webpack/webpack.wrapper.dev.babel.js --watch"
+    "watch": "webpack --progress --config webpack/webpack.wrapper.dev.babel.js --watch",
+    "demo": "webpack-dev-server --config webpack/webpack.wrapper.dev.babel.js"
   },
   "dependencies": {
     "rxjs": "^5.3.0",
