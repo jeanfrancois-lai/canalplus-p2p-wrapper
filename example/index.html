@@ -23,7 +23,11 @@
             };
             var player = new RxPlayer(playerOptions);
 
-            var wrapper = new CanalPlusWrapper(player);
+            var p2pConfig = {
+                streamrootKey: "ry-tguzre2t",
+                debug: true
+            };
+            var wrapper = new CanalPlusWrapper(player, p2pConfig);
 
             var loadVideoOptions = {
                 url: "http://hss-m05.live-aka.canal-plus.com/live/hss/cnews-clair-hd/hd-clair.isml/manifest",
