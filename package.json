@@ -19,6 +19,7 @@
     "demo": "webpack-dev-server --config webpack/webpack.wrapper.dev.babel.js"
   },
   "dependencies": {
+    "eventemitter3": "^2.0.3",
     "rxjs": "^5.3.0",
     "streamroot-p2p": "^4.0.0"
   },
