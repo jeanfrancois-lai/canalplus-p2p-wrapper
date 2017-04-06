@@ -27,7 +27,7 @@ export default {
     plugins: [
         new webpack.DefinePlugin({
             _VERSION_: JSON.stringify(version),
-            __DEV__: true,
+            __DEV__: false,
         }),
     ]
 };

@@ -11,6 +11,8 @@
             <video id="videoPlayer" width="480" height="360" controls muted></video>
         </div>
 
+        <div id="streamroot-graphs"></div>
+
         <script>
             var videoElement = document.getElementById("videoPlayer");
             videoElement.addEventListener('error', function(event) {
@@ -23,7 +25,11 @@
             };
             var player = new RxPlayer(playerOptions);
 
-            var wrapper = new CanalPlusWrapper(player);
+            var p2pConfig = {
+                streamrootKey: "dev",
+                debug: true
+            };
+            var wrapper = new CanalPlusWrapper(player, p2pConfig);
 
             var loadVideoOptions = {
                 url: "http://hss-m05.live-aka.canal-plus.com/live/hss/cnews-clair-hd/hd-clair.isml/manifest",
@@ -33,5 +39,7 @@
 
             player.loadVideo(loadVideoOptions);
         </script>
+
+        <script src="https://tools.streamroot.io/usage-graphs/latest/graphs.js"></script>
     </body>
 </html>
