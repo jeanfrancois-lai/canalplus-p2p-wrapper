@@ -11,8 +11,6 @@
             <video id="videoPlayer" width="480" height="360" controls muted></video>
         </div>
 
-        <div id="streamroot-graphs"></div>
-
         <script>
             var videoElement = document.getElementById("videoPlayer");
             videoElement.addEventListener('error', function(event) {
@@ -40,6 +38,7 @@
             player.loadVideo(loadVideoOptions);
         </script>
 
+        <div id="streamroot-graphs"></div>
         <script src="https://tools.streamroot.io/usage-graphs/latest/graphs.js"></script>
     </body>
 </html>
