@@ -36,12 +36,15 @@ deployment:
             # Generate dist
             - npm run build
 
+            # Add banner to build
             - toolkit/add_banner.rb --file dist/$DIST_WRAPPER
                                     --deploy_env $CIRCLE_BRANCH
                                     --dependencies streamroot-p2p
 
+            # Copy build to Circle CI artifacts folder
             - cp dist/$DIST_WRAPPER $CIRCLE_ARTIFACTS/$DIST_WRAPPER
 
+            # Upload build from artifacts folder to S3
             - toolkit/upload_to_s3.rb --bucket $S3_FEATURES_BUCKET
                                       --region eu-west-1
                                       --file $CIRCLE_ARTIFACTS/$DIST_WRAPPER
