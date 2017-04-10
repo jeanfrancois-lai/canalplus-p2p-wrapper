@@ -13,7 +13,9 @@
   },
   "main": "lib/CanalPlusWrapper.js",
   "scripts": {
+    "clean": "rimraf dist",
     "lint": "./node_modules/.bin/eslint lib/ test/",
+    "prebuild": "npm run lint",
     "build": "webpack --progress --config webpack/wrapper.prod.js",
     "build_dev": "webpack --progress --config webpack/wrapper.dev.js",
     "watch": "npm run build_dev -- --watch",
@@ -33,6 +35,7 @@
     "babel-preset-es2015": "^6.24.0",
     "eslint": "^3.19.0",
     "eslint-config-streamroot": "^1.0.3",
+    "rimraf": "^2.6.1",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
   }
