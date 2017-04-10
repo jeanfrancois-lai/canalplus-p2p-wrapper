@@ -55,9 +55,6 @@ deployment:
     staging:
         branch: dev
         commands:
-            # Clone tools
-            - git clone git@github.com:streamroot/bridge.git
-
             # Cleanup
             - npm run clean
 
@@ -136,15 +133,9 @@ deployment:
                                           --username $POST_USERNAME
                                           --icon-url $POST_PICTURE
 
-            # Run bridge
-            - bridge/run.rb --current_module $CIRCLE_PROJECT_REPONAME --trigger_branch dev --token $BRIDGE_TOKEN
-
     preprod:
         branch: master
         commands:
-            # Clone tools
-            - git clone git@github.com:streamroot/bridge.git
-
             # Update version
             - toolkit/update_version.rb
 
@@ -239,6 +230,3 @@ deployment:
                                           --slack-token $SLACK_TOKEN
                                           --username $POST_USERNAME
                                           --icon-url $POST_PICTURE
-
-            # Run bridge
-            - bridge/run.rb --current_module $CIRCLE_PROJECT_REPONAME --trigger_branch master --token $BRIDGE_TOKEN
