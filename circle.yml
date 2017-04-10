@@ -36,6 +36,19 @@ deployment:
             # Generate dist
             - npm run build
 
+            - toolkit/add_banner.rb --file dist/$DIST_WRAPPER
+                                    --deploy_env $CIRCLE_BRANCH
+                                    --dependencies streamroot-p2p
+
+            - cp dist/$DIST_WRAPPER $CIRCLE_ARTIFACTS/$DIST_WRAPPER
+
+            - toolkit/upload_to_s3.rb --bucket $S3_FEATURES_BUCKET
+                                      --region eu-west-1
+                                      --file $CIRCLE_ARTIFACTS/$DIST_WRAPPER
+                                      --destinations $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH/$DIST_WRAPPER
+                                      --key $S3_KEY
+                                      --secret $S3_SECRET
+
     staging:
         branch: dev
         commands:
