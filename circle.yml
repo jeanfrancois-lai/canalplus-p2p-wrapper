@@ -1,0 +1,49 @@
+machine:
+    node:
+        version: 7
+    ruby:
+        version: 2.2.0
+
+dependencies:
+    pre:
+        - gem install aws-sdk
+        - 'echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > ~/.npmrc'
+
+        # Clone tool
+        - git config --global user.email $STREAMROOT_EMAIL
+        - git config --global user.name $STREAMROOT_USERNAME
+        - git clone git@github.com:streamroot/toolkit.git
+
+        # Set peer-agent version
+        - toolkit/set_dependency_version.rb --exclude_branches master
+                                            --dependency_path dependencies.streamroot-p2p
+                                            --version beta
+        - npm prune
+
+    override:
+        - npm update
+    post:
+        - npm ls > $CIRCLE_ARTIFACTS/package.lock
+
+test:
+    override:
+        - npm run prebuild
+
+deployment:
+    features:
+        branch: /^(?!(?:dev|master)$).+$/
+        commands:
+            # Generate dist
+            - npm run build
+
+    staging:
+        branch: dev
+        commands:
+            # Generate dist
+            - npm run build
+
+    preprod:
+        branch: master
+        commands:
+            # Generate dist
+            - npm run build
