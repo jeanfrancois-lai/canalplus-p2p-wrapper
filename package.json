@@ -14,6 +14,7 @@
   "main": "lib/CanalPlusWrapper.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint lib/ test/",
+    "prebuild": "npm run lint",
     "build": "webpack --progress --config webpack/wrapper.prod.js",
     "build_dev": "webpack --progress --config webpack/wrapper.dev.js",
     "watch": "npm run build_dev -- --watch",
