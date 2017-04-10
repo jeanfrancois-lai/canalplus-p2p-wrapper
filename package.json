@@ -14,9 +14,10 @@
   "main": "lib/CanalPlusWrapper.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint lib/ test/",
-    "build": "webpack --progress --config webpack/webpack.wrapper.dev.babel.js",
-    "watch": "webpack --progress --config webpack/webpack.wrapper.dev.babel.js --watch",
-    "demo": "webpack-dev-server --config webpack/webpack.wrapper.dev.babel.js"
+    "build": "webpack --progress --config webpack/wrapper.prod.js",
+    "build_dev": "webpack --progress --config webpack/wrapper.dev.js",
+    "watch": "npm run build_dev -- --watch",
+    "demo": "webpack-dev-server --config webpack/wrapper.dev.js"
   },
   "dependencies": {
     "eventemitter3": "^2.0.3",

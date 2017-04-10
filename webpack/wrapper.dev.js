@@ -1,9 +1,9 @@
-import webpack from 'webpack';
+const webpack = require('webpack');
 
 const ROOT_PATH = `${__dirname}/..`;
 const { version } = require(`${ROOT_PATH}/package.json`);
 
-export default {
+module.exports = {
     entry: [`${ROOT_PATH}/lib/CanalPlusWrapper.js`],
 
     output: {
