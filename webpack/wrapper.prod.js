@@ -1,11 +1,10 @@
 const webpack = require('webpack');
 const prodConfig = require('./wrapper.dev');
 
-module.exports = Object.assign(prodConfig, {
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: false,
-            mangle: true,
-        }),
-    ]
-});
+prodConfig.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+        mangle: true,
+    })
+);
+
+module.exports = prodConfig;
