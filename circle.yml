@@ -27,7 +27,7 @@ dependencies:
 
 test:
     override:
-        - npm run prebuild
+        - npm run prebuild_check
 
 deployment:
     features:
