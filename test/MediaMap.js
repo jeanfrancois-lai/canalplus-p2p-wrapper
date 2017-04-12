@@ -2,6 +2,7 @@ import TrackView from '../lib/integration/TrackView';
 import SegmentView from '../lib/integration/SegmentView';
 import MediaMap from '../lib/integration/MediaMap';
 
+import Player from './mocks/Player';
 import manifest from './mocks/Manifest';
 
 const VIDEO_TRACK_1 = new TrackView({ adaptationId: 0, representationId: 0, type: 'video' });
@@ -24,10 +25,7 @@ describe('MediaMap', () => {
         let mediaMap;
 
         beforeEach(() => {
-            player = {
-                man: manifest,
-            };
-
+            player = new Player(manifest);
             mediaMap = new MediaMap(player);
         });
 
