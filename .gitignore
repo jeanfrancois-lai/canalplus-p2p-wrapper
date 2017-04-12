@@ -1,2 +1,7 @@
+# Wrapper
 dist/
 node_modules/
+
+# CI
+.ruby-version
+toolkit/
