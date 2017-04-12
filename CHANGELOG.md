@@ -7,5 +7,6 @@ This changelog's template come from [keepachangelog.com](http://keepachangelog.c
 ### Added
 - Live & VOD p2p for single and multi bitrate Smooth Streaming.
 - CI integration (prebuild checks, build, upload to S3).
+- Unit tests.
 
 ## [Unreleased]
