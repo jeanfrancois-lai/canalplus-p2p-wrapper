@@ -10,6 +10,8 @@ This module integrates [the Streamroot P2P module](http://streamroot.io) with CA
 
 ## Usage
 
+The wrapper is available as a npm package `streamroot-canalplus-p2p-wrapper`.
+
 Include `one-player-core` and wrapper builds to your app:
 ```
 <script type="text/javascript" src="one-player-core.js"></script>
