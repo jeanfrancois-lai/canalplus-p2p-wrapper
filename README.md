@@ -8,9 +8,21 @@ This module integrates [the Streamroot P2P module](http://streamroot.io) with CA
 1. Build the wrapper `npm run build`.
 1. This will create `canalplus-p2p-wrapper.js` in the `dist/` folder.
 
-## Usage
+## Release channels
 
-The wrapper is available as a npm package `streamroot-canalplus-p2p-wrapper`.
+### npm
+
+Package name is `streamroot-canalplus-p2p-wrapper` (`npm install --save streamroot-canalplus-p2p-wrapper`). All released stable versions of the wrapper are available here.
+
+### CDN
+
+**Current stable build**: `http://cdn.streamroot.io/canalplus-p2p-wrapper/stable/canalplus-p2p-wrapper.js`.
+
+**Latest build**: `http://cdn.streamroot.io/canalplus-p2p-wrapper/latest/canalplus-p2p-wrapper.js`.
+
+In a normal update cycle, we first release new builds on the latest release channel. Then, once feedback from the field has been consolidated and we have made sure that the latest build is fit for general release, we start distributing the new build via the stable channel.
+
+## Usage
 
 Include `one-player-core` and wrapper builds to your app:
 ```
