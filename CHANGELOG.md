@@ -12,3 +12,4 @@ This changelog's template come from [keepachangelog.com](http://keepachangelog.c
 - CI integration (prebuild checks, build, upload to S3).
 - Unit tests.
 
+[1.0.1]: https://github.com/streamroot/canalplus-p2p-wrapper/compare/v1.0.0...v1.0.1
