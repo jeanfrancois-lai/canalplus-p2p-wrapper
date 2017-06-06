@@ -1,6 +1,6 @@
 # canalplus-p2p-wrapper
 
-This module integrates [the Streamroot P2P module](http://streamroot.io) with CANAL+ video player -- `one-player-core`. Supported versions of the player are v2.0.9 & v2.0.10.
+This module integrates [the Streamroot P2P module](http://streamroot.io) with CANAL+ video player -- `one-player-core`. Supported versions of the player is v2.1.1.
 
 ## Build
 
@@ -127,7 +127,7 @@ You can also check `example/index.html` for usage example.
 ## Known issues and limitations
 
 1. Works only with `smooth` transport at the moment.
-1. Wrapper was tested with `one-player-core` v2.0.9 & v2.0.10 only, compatibility with other versions in not guaranteed.
+1. Wrapper was tested with `one-player-core` v2.1.1 only, compatibility with other versions in not guaranteed.
 1. Wrapper was tested only on one provided live stream. Need more streams (Live, VOD, multiple language, subtitles) to test.
 1. P2P performance on live streams depends on latency from the live edge, so we need to adjust it.
 1. Using same player instance for playing multiple manifests/streams is not supported in the moment. It can be implemented if support of such use case in necessary.
