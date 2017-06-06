@@ -61,9 +61,7 @@ describe('MediaMap', () => {
 
     describe('getTrackList', () => {
         it('should return list of all available tracks', () => {
-            const player = {
-                man: manifest,
-            };
+            const player = new Player(manifest);
             const mediaMap = new MediaMap(player);
             const tracks = mediaMap.getTrackList();
 

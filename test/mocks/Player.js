@@ -2,7 +2,7 @@ const DEFAULT_VIDEO_BUFFER_SIZE = 30;
 
 class Player {
     constructor(manifest) {
-        this.man = manifest;
+        this._manifest = manifest;
 
         this.adas = {
             audio: manifest.adaptations.audio[0],
@@ -16,6 +16,14 @@ class Player {
         this._videoBufferSize = DEFAULT_VIDEO_BUFFER_SIZE;
 
         this._eventHandlers = {};
+    }
+
+    getManifest() {
+        return this._manifest;
+    }
+
+    isLive() {
+        return this._manifest.isLive;
     }
 
     getVideoBufferSize() {
