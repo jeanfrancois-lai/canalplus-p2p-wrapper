@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This changelog's template come from [keepachangelog.com](http://keepachangelog.com/). When editing this document, please follow the convention specified there.
 
 ## [Dev]
+### [Changed]
+- Updated to one-player-core v2.1.1.
 
 ## [Unreleased]
 ## [1.0.0] - 2017-04-19
