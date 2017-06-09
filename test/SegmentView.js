@@ -1,10 +1,15 @@
 import SegmentView from '../lib/integration/SegmentView';
 import TrackView from '../lib/integration/TrackView';
 
-const VIDEO_TRACK_1 = new TrackView({ adaptationId: 0, representationId: 0 });
-const VIDEO_TRACK_2 = new TrackView({ adaptationId: 0, representationId: 1 });
-const AUDIO_TRACK_1 = new TrackView({ adaptationId: 1, representationId: 0 });
-const AUDIO_TRACK_2 = new TrackView({ adaptationId: 1, representationId: 1 });
+const ADAPTATION_VIDEO_1 = 'video_1';
+const ADAPTATION_VIDEO_2 = 'video_2';
+const ADAPTATION_AUDIO_1 = 'audio_fr_1';
+const ADAPTATION_AUDIO_2 = 'audio_fr_2';
+
+const VIDEO_TRACK_1 = new TrackView({ adaptationId: ADAPTATION_VIDEO_1, representationId: 0 });
+const VIDEO_TRACK_2 = new TrackView({ adaptationId: ADAPTATION_VIDEO_2, representationId: 1 });
+const AUDIO_TRACK_1 = new TrackView({ adaptationId: ADAPTATION_AUDIO_1, representationId: 0 });
+const AUDIO_TRACK_2 = new TrackView({ adaptationId: ADAPTATION_AUDIO_2, representationId: 1 });
 
 describe('SegmentView', () => {
     describe('fromArrayBuffer & toArrayBuffer', () => {
