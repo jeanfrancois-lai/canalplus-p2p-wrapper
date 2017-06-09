@@ -4,18 +4,22 @@ class Player {
     constructor(manifest) {
         this._manifest = manifest;
 
-        this.adas = {
-            audio: manifest.adaptations.audio[0],
-            video: manifest.adaptations.video[0],
-        };
-        this.reps = {
-            audio: manifest.adaptations.audio[0].representations[0],
-            video: manifest.adaptations.video[0].representations[0],
-        };
-
         this._videoBufferSize = DEFAULT_VIDEO_BUFFER_SIZE;
-
         this._eventHandlers = {};
+    }
+
+    getCurrentAdaptations() {
+        return {
+            audio: this._manifest.adaptations.audio[0],
+            video: this._manifest.adaptations.video[0],
+        };
+    }
+
+    getCurrentRepresentations() {
+        return {
+            audio: this._manifest.adaptations.audio[0].representations[0],
+            video: this._manifest.adaptations.video[0].representations[0],
+        };
     }
 
     getManifest() {
