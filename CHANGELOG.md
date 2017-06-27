@@ -27,3 +27,4 @@ This changelog's template come from [keepachangelog.com](http://keepachangelog.c
 [1.1.4]: https://github.com/streamroot/canalplus-p2p-wrapper/compare/v1.1.0...v1.1.4
 [1.1.5]: https://github.com/streamroot/canalplus-p2p-wrapper/compare/v1.1.0...v1.1.5
 [1.1.6]: https://github.com/streamroot/canalplus-p2p-wrapper/compare/v1.1.0...v1.1.6
+[1.1.7]: https://github.com/streamroot/canalplus-p2p-wrapper/compare/v1.1.0...v1.1.7
